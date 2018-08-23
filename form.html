@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html>
+<head><title>Sign Up MyBook</title></head>
+<body>
+<h1>Buat Account Baru!</h1>
+<h2>Sign Up Form</h2>
+<form action="./welcome.html">
+  <fieldset>
+    <legend>Personal Information</legend>
+    <p>
+      <label for="first-name">First Name:</label>
+      <input id="first-name" name="firstName" type="text">
+    </p>
+    <p>
+      <label for="last-name">Last Name:</label>
+      <input id="last-name" name="lastName" type="text">
+    </p>    
+  </fieldset>
+
+  <fieldset>
+    <legend>Gender</legend>    
+      <label for="gender"></label>
+      <input id="male-radio" type="radio" name="gender" value="male">
+      <label for="male-radio">Male</label>
+      <input id="female-radio" type="radio" name="gender" value="female">
+      <label for="female-radio">Female</label>
+  </fieldset>
+
+  <fieldset>
+  	<legend>Nationality:</legend>
+      <p>
+      <label for="nationality">Your Nationality?</label>
+      <input type="text" name="nationality" list="nationCountry" />
+      <datalist id="nationCountry">
+        <select name="altnationCountry">
+          <option value="Indonesian"></option>
+          <option value="Singaporean"></option>
+          <option value="Malaysian"></option>
+          <option value="Australian"></option>
+      </select>
+    </datalist>
+  </p>
+  </fieldset>
+  <fieldset>
+  	<legend>Language Spoken</legend>
+  	  <input type="checkbox" name="language" value="Indonesia"> Indonesia<br>
+  	  <input type="checkbox" name="language" value="English"> English<br>
+  	  <input type="checkbox" name="language" value="Other"> Other
+  </fieldset>
+  <fieldset>
+  	<legend>Introduction</legend>
+  	  <textarea name="introduction"></textarea>
+  </fieldset>
+<br>
+
+  <input type="submit" value="Sign Up">
+
+
+</form>
+  
+
+
+</body>
+</html>
