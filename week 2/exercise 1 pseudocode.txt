@@ -48,10 +48,10 @@ STORE "kuku siswa" with 'panjang'
 STORE "jumlah siswa" with 0
 
 WHILE "jumlah siswa" <40
-   ADD "jumlah siswa" by 1
-   IF "kuku siswa" equals to 'panjang'
-	DISPLAY "beri hukuman"
-   ELSE
-	DISPLAY "beri pujian"
+  IF "kuku siswa" equals to 'panjang'
+	  DISPLAY "beri hukuman"
+  ELSE
+	  DISPLAY "beri pujian"
+  ADD "jumlah siswa" by 1
 
 DISPLAY "pengecekan kuku telah selesai"
