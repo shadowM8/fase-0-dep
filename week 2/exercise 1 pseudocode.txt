@@ -1,0 +1,57 @@
+Pseudocode Challenge
+
+1. Newton Second Law
+
+STORE "massa_benda" with 600
+STORE "percepatan" with 2
+STORE "resultan gaya" without any value
+
+CALCULATE "massa_benda" times "percepatan"
+SET "resultan gaya" with calculation result
+
+DISPLAY "area"
+
+2. Tahun Kabisat
+
+STORE "TAHUN" without any value
+INPUT "TAHUN" with any value
+
+DISPLAY "TAHUN"
+CALCULATE "TAHUN" mod 4
+STORE "SISA01" to the result of calculation
+CALCULATE "TAHUN" mod 100
+STORE "SISA02" to the result of calculation
+CALCULATE "TAHUN" mod 400
+STORE "SISA03" to the result of calculation
+
+IF "SISA01" not equals to 0
+   DISPLAY "BUKAN TAHUN KABISAT"
+ELSE
+   IF "SISA02" equals to 0 & "SISA03" not equals to 0
+	DISPLAY "BUKAN TAHUN KABISAT"
+   ELSE
+      DISPLAY "TAHUN KABISAT"
+
+3. Laundry Day
+
+STORE "Total Laundry" with 0
+
+WHILE "Total Laundry" < 20
+  ADD "Total Laundry" by 1
+
+DISPLAY "Laundry Dinyalakan"
+
+4. Periksa kuku
+
+STORE "kuku siswa" with 'panjang'
+
+STORE "jumlah siswa" with 0
+
+WHILE "jumlah siswa" <40
+   ADD "jumlah siswa" by 1
+   IF "kuku siswa" equals to 'panjang'
+	DISPLAY "beri hukuman"
+   ELSE
+	DISPLAY "beri pujian"
+
+DISPLAY "pengecekan kuku telah selesai"
