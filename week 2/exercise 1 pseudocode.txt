@@ -13,6 +13,27 @@ DISPLAY "area"
 
 2. Tahun Kabisat
 
+Algoritma
+STORE "TAHUN" without any value
+INPUT "TAHUN" with any value
+
+DISPLAY "TAHUN"
+CALCULATE "TAHUN" divided by 4
+  STORE "SISA01" with calculation result
+CALCULATE "TAHUN" divided by 100
+  STORE "SISA02" with calculation result
+CALCULATE "TAHUN" divided by 400
+  STORE "SISA03" with calculation result
+
+IF "SISA01" not equals to 0
+  DISPLAY "BUKAN TAHUN KABISAT"
+ELSE 
+    IF "SISA02" equals to 0 AND "SISA03" not equals to 0
+      DISPLAY "BUKAN TAHUN KABISAT"
+    ELSE
+      DISPLAY "TAHUN KABISAT"
+
+Pseudocode
 STORE "TAHUN" without any value
 INPUT "TAHUN" with any value
 
@@ -27,30 +48,56 @@ STORE "SISA03" to the result of calculation
 IF "SISA01" not equals to 0
    DISPLAY "BUKAN TAHUN KABISAT"
 ELSE
-   IF "SISA02" equals to 0 & "SISA03" not equals to 0
+   IF "SISA02" equals to 0 AND "SISA03" not equals to 0
 	DISPLAY "BUKAN TAHUN KABISAT"
    ELSE
       DISPLAY "TAHUN KABISAT"
 
 3. Laundry Day
 
-STORE "Total Laundry" with 0
+Algoritma
+STORE "Total Laundry" with value 0
 
-WHILE "Total Laundry" < 20
-  ADD "Total Laundry" by 1
+WHILE "Total Laundry" value less than 20
+  ADD "Total  Laundry" value by 1
 
-DISPLAY "Laundry Dinyalakan"
+AFTER "Total Laundry" value reached 20
+DISPLAY "Mesin Laundry Dinyalakan" 
+
+Pseudocode
+STORE "totalLaundry" with 0
+
+WHILE "totalLaundry" < 20
+  ADD "totalLaundry" by 1
+
+DISPLAY "Mesin Laundry Dinyalakan"
 
 4. Periksa kuku
 
-STORE "kuku siswa" with 'panjang'
+Algoritma
+STORE "Kuku siswa" with value between 1 to 10
+STORE "Jumlah siswa" with value 0
 
-STORE "jumlah siswa" with 0
+WHILE "Jumlah siswa" value less than 40
+  IF "Kuku siswa" value more than 5 AND less than 10
+    DISPLAY "beri hukuman"
+  ELSE IF "Kuku siswa" value more than 0 AND less than 5
+    DISPLAY "beri pujian"
+  ADD "Jumlah siswa" value by 1
 
-WHILE "jumlah siswa" <40
-  IF "kuku siswa" equals to 'panjang'
+AFTER "Jumlah siswa" value equals to 40
+DISPLAY "pengecekan kuku telah selesai"
+  
+
+Pseudocode
+STORE "kukuSiswa" with value between 1 - 10
+
+STORE "jumlahSiswa" with 0
+
+WHILE "jumlahSiswa" <40
+  IF "kukuSiswa" value between 5 and 10
 	  DISPLAY "beri hukuman"
-  ELSE
+  ELSE IF "kukuSiswa" value between 1 and 5
 	  DISPLAY "beri pujian"
   ADD "jumlah siswa" by 1
 
