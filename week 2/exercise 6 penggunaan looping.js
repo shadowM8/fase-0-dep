@@ -1,9 +1,9 @@
 //01 looping dengan while
-var counter = 0
-console.log('LOOPING PERTAMA')
-while (counter < 20) {
-    counter = counter + 2
-    console.log(counter + ' - I love coding')
+var counter = 0  // set nilai counter sama dengan 0
+console.log('LOOPING PERTAMA') // cetak LOOPING PERTAMA
+while (counter < 20) {      //saat nilai counter kurang dari 20, lakukan  
+    counter = counter + 2   //ini (incremen + 2)
+    console.log(counter + ' - I love coding') //dan ini (cetak nilai counter dan tulisan i love coding)
 }
 console.log('LOOPING KEDUA')
 while (counter > 0) {

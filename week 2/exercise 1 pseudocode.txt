@@ -14,24 +14,13 @@ DISPLAY "area"
 2. Tahun Kabisat
 
 Algoritma
-STORE "TAHUN" without any value
-INPUT "TAHUN" with any value
-
-DISPLAY "TAHUN"
-CALCULATE "TAHUN" divided by 4
-  STORE "SISA01" with calculation result
-CALCULATE "TAHUN" divided by 100
-  STORE "SISA02" with calculation result
-CALCULATE "TAHUN" divided by 400
-  STORE "SISA03" with calculation result
-
-IF "SISA01" not equals to 0
-  DISPLAY "BUKAN TAHUN KABISAT"
-ELSE 
-    IF "SISA02" equals to 0 AND "SISA03" not equals to 0
-      DISPLAY "BUKAN TAHUN KABISAT"
-    ELSE
-      DISPLAY "TAHUN KABISAT"
+1. Tentukan nominal tahun yang akan dicari tahu sebagai tahun kabisat atau bukan
+2. Hitung tahun dengan rumus "tahun dibagi 4", cek apakah ada sisa dari hasil bagi
+3. Hitung tahun dengan rumus "tahun dibagi 100", cek apakah ada sisa dari hasil bagi
+4. Hitung tahun dengan rumus "tahun dibagi 400", cek apakah ada sisa dari hasil bagi
+5. Jika tahun habis dibagi 4 dan tidak habis dibagi 100, tentukan sebagai Tahun Kabisat
+6. Jika tahun habis dibagi 4, habis dibagi 100, dan habis dibagi 400, tentukan sebagai Tahun Kabisat
+7. Tahun yang tidak memenuhi syarat 5 dan 6, bukan merupakan Tahun Kabisat
 
 Pseudocode
 STORE "TAHUN" without any value
@@ -45,29 +34,25 @@ STORE "SISA02" to the result of calculation
 CALCULATE "TAHUN" mod 400
 STORE "SISA03" to the result of calculation
 
-IF "SISA01" not equals to 0
-   DISPLAY "BUKAN TAHUN KABISAT"
+IF "SISA01" equals to 0 AND "SISA02" not equals to 0
+   DISPLAY "TAHUN KABISAT"
+ELSE IF "SISA01" equals to 0 AND "SISA02" equals to 0 AND "SISA03" equals to 0
+	DISPLAY "TAHUN KABISAT"
 ELSE
-   IF "SISA02" equals to 0 AND "SISA03" not equals to 0
-	DISPLAY "BUKAN TAHUN KABISAT"
-   ELSE
-      DISPLAY "TAHUN KABISAT"
+  DISPLAY "BUKAN TAHUN KABISAT"
 
 3. Laundry Day
 
 Algoritma
-STORE "Total Laundry" with value 0
-
-WHILE "Total Laundry" value less than 20
-  ADD "Total  Laundry" value by 1
-
-AFTER "Total Laundry" value reached 20
-DISPLAY "Mesin Laundry Dinyalakan" 
+1. Tentukan jumlah pakaian yang akan dilaundry sebanyak 20
+2. Tentukan jumlah pakaian yang sudah dimasukkan di laundry, yaitu di saat awal 0
+3. Masukkan pakaian satu persatu ke dalam laundry, sampai jumlah pakaian yang sudah dimasukkan ke dalam mesin sebanyak 20 
+4. Nyalakan mesin laundry.
 
 Pseudocode
 STORE "totalLaundry" with 0
 
-WHILE "totalLaundry" < 20
+WHILE "totalLaundry" =< 20
   ADD "totalLaundry" by 1
 
 DISPLAY "Mesin Laundry Dinyalakan"
@@ -75,18 +60,14 @@ DISPLAY "Mesin Laundry Dinyalakan"
 4. Periksa kuku
 
 Algoritma
-STORE "Kuku siswa" with value between 1 to 10
-STORE "Jumlah siswa" with value 0
-
-WHILE "Jumlah siswa" value less than 40
-  IF "Kuku siswa" value more than 5 AND less than 10
-    DISPLAY "beri hukuman"
-  ELSE IF "Kuku siswa" value more than 0 AND less than 5
-    DISPLAY "beri pujian"
-  ADD "Jumlah siswa" value by 1
-
-AFTER "Jumlah siswa" value equals to 40
-DISPLAY "pengecekan kuku telah selesai"
+1. Tentukan jumlah siswa yang akan diperiksa kuku, yaitu sebesar 40
+2. Tentukan skala nilai 1-10 sebagai standar panjang pendeknya kuku siswa, dengan nilai 1 yang berarti amat pendek, dan nilai 10 yang berarti amat panjang
+3. Tentukan jumlah siswa yang sudah diperiksa kuku, saat awal berarti 0
+4. Lakukan pemeriksaan kuku siswa, selama jumlah siswa yang sudah diperiksa belum mencapai 40, lakukan pemeriksaan dan beri penilaian terhadap kuku siswa.
+5. Jika kuku siswa bernilai 6-10, beri hukuman
+6. Jika kuku siswa bernilai 1-5, beri pujian
+7. Tambah jumlah siswa yang sudah diperiksa, lalu cek siswa berikutnya, lakukan langkah 5 dan 6 lagi.
+8. Stop pengecekan kuku setelah jumlah siswa yang diperiksa sama dengan 40
   
 
 Pseudocode
@@ -94,7 +75,7 @@ STORE "kukuSiswa" with value between 1 - 10
 
 STORE "jumlahSiswa" with 0
 
-WHILE "jumlahSiswa" <40
+WHILE "jumlahSiswa" =<40
   IF "kukuSiswa" value between 5 and 10
 	  DISPLAY "beri hukuman"
   ELSE IF "kukuSiswa" value between 1 and 5
