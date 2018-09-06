@@ -60,17 +60,17 @@ function dataHandling2(input) {
     var tanggalJoin = input[3].split('/')
     console.log(tanggalJoin.join('-'))
     var inputSlice = input.slice(1, 2)
-    console.log(inputSlice) // dapat hasil ['Roman Alamsyah Elsharawy']
+    // console.log(inputSlice) // dapat hasil ['Roman Alamsyah Elsharawy']
     // ubah inputSlice menjadi string karena array dengan 1 nilai saja tidak bs dislice
     // 1 gunakan split
     var namaSplit = inputSlice[0].split(' ')
-    console.log(namaSplit)
+    // console.log(namaSplit)
     var namaString = namaSplit.join(' ') //2 gunakan join
-    console.log(namaString)
+    // console.log(namaString)
     var namaSlice = namaString.slice(0, 14) //3 baru dislice
     console.log(namaSlice)
 
-    // return input
+    
 }
 
 dataHandling2(input)
