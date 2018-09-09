@@ -24,39 +24,31 @@ var input = [
 // console.log(reverse_a_number(32243));
 // console.log (typeof reverse_a_number(32243))
 
-// function reversal(number) {
-//     var reversed = 0;
-   
-//     while (number != 0) {
-//      reversed *= 10;
-//      reversed += number % 10;
-//      number -= number % 10;
-//      number /= 10;
-//     }
-   
-//     return reversed;
-//    }
+function reversal(number) {
+    var reversed = 0;
 
-// console.log(reversal(21))
-var number = 3
-var reversed = 5
+    while (number != 0) {       // selama number tidak sama dengan 0 lakukan
+        reversed *= 10;            // reversed = reversed * 10
+        reversed += number % 10;   // reversed = reversed + number % 10 ; ni modulus dulu baru +
+        number -= number % 10;     // number   = number - number % 10   ; ni decremennya ; ni modulus dulu baru -
+        number /= 10;              // number   = number / 10            ; ni juga
+    }
+    return reversed;
+}
+console.log(reversal(21))
 
-reversed *= 10
-console.log('langkah 1')
-console.log(number)
-console.log(reversed)
+var testing = 10 + 10 % 10
+console.log(testing)
+var test2 = 10
+test2 += 10 % 10
+console.log(test2)
 
-reversed += number%10
-console.log('langkah 2')
-console.log(number)
-console.log(reversed)
+var x = "7"
+var y = "9"
+if (y > x) {
+    console.log(true)
+} else {
+    console.log(false)
+}
+// jadi value string itu asalkan 1 digit, mirip dengan number
 
-number -= number %10
-console.log('langkah 3')
-console.log(number)
-console.log(reversed)
-
-number /= 10
-console.log('langkah 4')
-console.log(number)
-console.log(reversed)

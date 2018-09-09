@@ -1,12 +1,14 @@
 /**
  * algoritma untuk menghitung jumlah kata dalam kalimat
- * 1. 
+ * 1. pisahkan kata kata dalam kalimat yang akan dijadikan parameter kedalam nilai tersendiri
+ * 2. hitung jumlah kata
  * 
  */
 
 function hitungJumlahKata(kalimat) {
     // you can only write your code here!
-
+    var temp = kalimat.split(' ') // karena kalimat dipisahkan oleh spasi
+    return temp.length
   }
   
   // TEST CASES
