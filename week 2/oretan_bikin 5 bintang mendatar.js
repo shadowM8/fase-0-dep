@@ -6,12 +6,17 @@
 //     rows1 = rows1 - 1
 // }
 
-var tahun = 2000;
+// var tahun = 2000;
 
-if (tahun % 4 === 0 && tahun % 100 !== 0) {
-    console.log("Tahun Kabisat")
-} else if (tahun % 4 === 0 && tahun % 100 === 0 && tahun % 400 === 0) {
-    console.log("Tahun Kabisat juga")
-} else {
-    console.log("Bukan tahun kabisat")
-}
+// if (tahun % 4 === 0 && tahun % 100 !== 0) {
+//     console.log("Tahun Kabisat")
+// } else if (tahun % 4 === 0 && tahun % 100 === 0 && tahun % 400 === 0) {
+//     console.log("Tahun Kabisat juga")
+// } else {
+//     console.log("Bukan tahun kabisat")
+// }
+var x = ""+3
+console.log (x)
+console.log (typeof x)
+var y = x + 1
+console.log (y)

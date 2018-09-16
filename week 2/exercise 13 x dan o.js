@@ -4,25 +4,25 @@
 
 function xo(str) {
     // you can only write your code here!    
-    var jumlahStringx=""
-    var jumlahStringo=""
-    for (i=str.length-1;i >=0;i--){
-        if (str[i]==='x'){
+    var jumlahStringx = 0
+    var jumlahStringo = 0
+    for (i = str.length - 1; i >= 0; i--) {
+        if (str[i] === 'x') {
             jumlahStringx = jumlahStringx + 1
-        } else if (str[i]==='o'){
+        } else if (str[i] === 'o') {
             jumlahStringo = jumlahStringo + 1
         }
-    }    
+    }
     if (jumlahStringx === jumlahStringo) {
         return true
     } else {
         return false
     }
-  }
-  
-  // TEST CASES
-  console.log(xo('xoxoxo')); // true
-  console.log(xo('oxooxo')); // false
-  console.log(xo('oxo')); // false
-  console.log(xo('xxxooo')); // true
-  console.log(xo('xoxooxxo')); // true
+}
+
+// TEST CASES
+console.log(xo('xoxoxo')); // true
+console.log(xo('oxooxo')); // false
+console.log(xo('oxo')); // false
+console.log(xo('xxxooo')); // true
+console.log(xo('xoxooxxo')); // true
