@@ -10,28 +10,42 @@
 function hitungHuruf(kata) {
     // you can only write your code here!
     var arrayKataSplit = kata.split(' ')
-    var arrayKataTemp = '-1'    
+    var hasil = arrayKataSplit[0]
+    var counterHasil = 0
 
-    for (var i = 0; i < arrayKataSplit.length; i++) {
-        for (var j = 0; j < arrayKataSplit[i].length;j++){
-            arrayKataTemp = arrayKataSplit[i][j]
-            for (var k = j+1; k < arrayKataSplit[i].length;k++){
-                if (arrayKataTemp === arrayKataSplit[i][k]){
-                    return arrayKataSplit[i]
+    for (var i = 0; i < arrayKataSplit.length; i++) { //looping kata
+        var arrayCounter = []
+
+        for (var j = 0; j < arrayKataSplit[i].length; j++) { // looping huruf
+
+            var counter = 0
+            for (var k = 0; k < arrayKataSplit[i].length; k++) { // looping menghitung masing2 huruf di kata
+                if (arrayKataSplit[i][j] === arrayKataSplit[i][k]) {
+                    counter = counter + 1
                 }
             }
-        }
-        
-        
-    }
-    return arrayKataTemp
+            arrayCounter.push(counter)
 
+        }
+        // console.log(arrayCounter) 
+        var arrayTampungCounter = 0
+        for (var l = 0; l < arrayCounter.length; l++) {
+            if (arrayCounter[l] >= 2) {
+                arrayTampungCounter = arrayTampungCounter + 1
+            }
+        }
+        if (arrayTampungCounter > counterHasil) {
+            hasil = arrayKataSplit[i]
+            counterHasil = arrayTampungCounter
+        }        
+    }
+    return hasil
 
 }
 
 // TEST CASES
 console.log(hitungHuruf('Today, is the greatest day ever')); // greatest
-console.log(hitungHuruf('I am a passionate developer')); // passionate
-console.log(hitungHuruf('aku adalah anak gembala')); // adalah
-console.log(hitungHuruf('rajin pangkal kaya')); // pangkal
-console.log(hitungHuruf('mengayuh perahu di danau')); // danau
+// console.log(hitungHuruf('I am a passionate developer')); // passionate
+// console.log(hitungHuruf('aku adalah anak gembala')); // adalah
+// console.log(hitungHuruf('rajin pangkal kaya')); // pangkal
+// console.log(hitungHuruf('mengayuh perahu di danau')); // danau
