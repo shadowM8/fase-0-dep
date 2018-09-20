@@ -1,46 +1,37 @@
 function shoppingTime(memberId, money) {
-    // you can only write your code here!
     var pelanggan = {}
     pelanggan.memberId = memberId
     pelanggan.money = money
     pelanggan.listPurchased = []
-    var barangSale = {}
-    barangSale['Sepatu Stacattu'] = 1500000
-    barangSale['Baju Zoro'] = 500000
-    barangSale['Baju H&N'] = 250000
-    barangSale['Sweater Uniklooh'] = 175000
-    barangSale['Casing Handphone'] = 50000
-    var pengeluaran = {}
-    var panjangList = pelanggan.listPurchased.length
+    pelanggan.changemoney = 0
+    var barang = []
+    barang[0] = ['Sepatu Stacattu', 1500000]
+    barang[1] = ['Baju Zoro', 500000]
+    barang[2] = ['Baju H&N', 250000]
+    barang[3] = ['Sweater Uniklooh', 175000]
+    barang[4] = ['Casing Handphone', 50000]
 
-    if (pelanggan.money < 50000) {
-        return "Mohon maaf, uang tidak cukup"
-    } else if (!pelanggan.memberId) {
+    if (!pelanggan.memberId) {
         return "Mohon maaf, toko X hanya berlaku untuk member saja"
     }
-    pelanggan.changeMoney = money
-    while (pelanggan.changeMoney >= 50000) {
-        if (pelanggan.changeMoney >= 1500000) {
-            pelanggan.listPurchased.push('Sepatu Stacattu')
-            pengeluaran.moneySpent = barangSale['Sepatu Stacattu']
-        } else if (pelanggan.changeMoney >= 500000) {
-            pelanggan.listPurchased.push('Baju Zoro')
-            pengeluaran.moneySpent = barangSale['Baju Zoro']
-        } else if (pelanggan.changeMoney >= 250000) {
-            pelanggan.listPurchased.push('Baju H&N')
-            pengeluaran.moneySpent = barangSale['Baju H&N']
-        } else if (pelanggan.changeMoney >= 175000) {
-            pelanggan.listPurchased.push('Sweater Uniklooh')
-            pengeluaran.moneySpent = barangSale['Sweater Uniklooh']
-        } else if (pelanggan.changeMoney >= 50000) {
-            pelanggan.listPurchased.push('Casing Handphone')
-            pengeluaran.moneySpent = barangSale['Casing Handphone']
-        }
-        pelanggan.changeMoney = pelanggan.changeMoney - pengeluaran.moneySpent
+    if (pelanggan.money <= 50000) {
+        return "Mohon maaf, uang tidak cukup"
     }
-
+    var i = 0
+    var selisih = pelanggan.money
+    for (var i = 0; i < barang.length; i++) {        
+        if (selisih >= 50000 && selisih >= barang[i][1]) {
+            pelanggan.listPurchased.push(barang[i])
+            selisih = selisih - barang[i][1]
+        }
+    }
+    // console.log(barang)
+    pelanggan.changemoney = selisih
     return pelanggan
 }
+
+
+// console.log(shoppingTime('1820RzKrnWn08', 170000))
 
 
 // TEST CASES

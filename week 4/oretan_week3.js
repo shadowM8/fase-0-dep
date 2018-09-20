@@ -1,53 +1,56 @@
-// var abjadBaru = 'Budi'
-// var alphabet = 'abcdefghijklmnopqrstuvwxyz'
-// var kata = 'Today, is the greatest day ever'
+function shoppingTime(memberId, money) {
+    var pelanggan = {}
+    pelanggan.memberId = memberId
+    pelanggan.money = money
+    pelanggan.listPurchased = []
+    pelanggan.changemoney = 0
+    var barang = []
+    barang[0] = ['Sepatu Stacattu', 1500000]
+    barang[1] = ['Baju Zoro', 500000]
+    barang[2] = ['Baju H&N', 250000]
+    barang[3] = ['Sweater Uniklooh', 175000]
+    barang[4] = ['Casing Handphone', 50000]
 
-// console.log(kata.split(" "))
-// var arrayKataSplit = kata.split(' ')
-// console.log(arrayKataSplit[0])
-// /**
-//  * ask exercise 4 gimana cara ngurutin array
-//  */
-// //ask exercise 5 tentang tipe data abjadBaru kenapa harus []
+    if (!pelanggan.memberId) {
+        return "Mohon maaf, toko X hanya berlaku untuk member saja"
+    }
+    if (pelanggan.money <= 50000) {
+        return "Mohon maaf, uang tidak cukup"
+    }
+    var i = 0
+    var selisih = pelanggan.money
+    for (var i = 0; i < barang.length; i++) {        
+        if (selisih >= 50000 && selisih >= barang[i][1]) {
+            pelanggan.listPurchased.push(barang[i])
+            selisih = selisih - barang[i][1]
+        }
+    }
+    // console.log(barang)
+    pelanggan.changemoney = selisih
+    return pelanggan
+}
 
-// var number = 27
 
-// console.log(number.toString().length)
+// console.log(shoppingTime('1820RzKrnWn08', 170000))
 
-// var arrayData = [
-//     {product:'',shoppers:[],leftOver:0,totalProfit:0}
-//   ]
-// arrayData[0].product = 'baju'
-// console.log(arrayData[1].product)
 
-// arrNumber =[2, 8, 4, 6, 8, 5, 8, 4]
-// arrNumber.sort(function (a, b) { return b - a })
-
-// console.log(arrNumber)
-
-// loop pesan makanan tiap 15 menit
-// function pesanMakan(waktu) {
-//     jumlahPesan = 0
-//     for ( var i = waktu; i>=0; i = i - 15){
-//         jumlahPesan = jumlahPesan + 1
-
-//     }
-//     return jumlahPesan
-// }
-
-// console.log(pesanMakan(66))
-
-// loop tambah jumlah perdigit
-// function totalDigit(angka) {
-//     var angkaString = angka.toString()
-//     var hasil = 0
-//     for (var i = 0; i < angkaString.length; i++) {
-//         hasil = hasil + angkaString[i]
-//     }
-//     return hasil
-// }
-// console.log(totalDigit(512))
-
-var angka = 512
-var z = angka.toString().split('')
-console.log(z)
+// TEST CASES
+console.log(shoppingTime('1820RzKrnWn08', 2475000));
+//{ memberId: '1820RzKrnWn08',
+// money: 2475000,
+// listPurchased:
+//  [ 'Sepatu Stacattu',
+//    'Baju Zoro',
+//    'Baju H&N',
+//    'Sweater Uniklooh',
+//    'Casing Handphone' ],
+// changeMoney: 0 }
+console.log(shoppingTime('82Ku8Ma742', 170000));
+//{ memberId: '82Ku8Ma742',
+// money: 170000,
+// listPurchased:
+//  [ 'Casing Handphone' ],
+// changeMoney: 120000 }
+console.log(shoppingTime('', 2475000)); //Mohon maaf, toko X hanya berlaku untuk member saja
+console.log(shoppingTime('234JdhweRxa53', 15000)); //Mohon maaf, uang tidak cukup
+console.log(shoppingTime()); ////Mohon maaf, toko X hanya berlaku untuk member saja
