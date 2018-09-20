@@ -2,37 +2,27 @@ function highestScore (students) {
     // Code disini
     var hasil = {}
     // var hasil = []   
-    for (var i = 0; i < students.length; i++) {
-        var score = 0
-        for (var j = 0; j <students.length ; j++ ) {
-            
-            if (students[j].score > score  || students[j].class !== students[i].class) {
-                score = students[j].score
-                var obj = {}
-                obj.name = students[j].name
-                obj.score = score
-                obj.class = students[j].class
-                
-            }
-        }
-    
-    //   var obj = {}
-    //   obj.name = students[i].name
-    //   obj.score = students[i].score
-      
-      hasil[students[i].class] = obj
-    //   hasil.push(obj)
-      
+    for (var i = 0; i < students.length; i++) { // menfilter kelas dari yang dobel menjadi unik
+      var kelas = students[i].class
+      var nama = students[i].name
+      var score = students[i].score
+
+      hasil[kelas] = {}
+      hasil[kelas]['nama'] = nama
+      hasil[kelas]['score'] = score
+    }
+    for (var j = 0; j < students.length; j++) { // bandingkan object hasil dengan array students, yang diband
+      var kelasDua = students[j].class          // -ingkan itu skor dari objek hasil dan skor dari array students
+      if (hasil[kelasDua]['score'] < students[j].score) {
+        hasil[kelasDua]['score'] = students[j].score
+        hasil[kelasDua]['nama'] = students[j].name
+      }
     }    
     return hasil
   }
 
   /**
-   * algoritmanya
-   * 1. Pertama kelompokkan dulu object di dalam array berdasar classnya
-   * 2. Jadi yang classnya memiliki value sama dijadikan 1 kelompok
-   * 3. Dari 1 kelompok ini, dibandingkan value scorenya mana yang paling tinggi
-   * 4. masukkan ke object output
+   * 
    */
   
   // TEST CASE
@@ -65,40 +55,40 @@ function highestScore (students) {
   // }
   
   
-  console.log(highestScore([
-    {
-      name: 'Alexander',
-      score: 100,
-      class: 'foxes'
-    },
-    {
-      name: 'Alisa',
-      score: 76,
-      class: 'wolves'
-    },
-    {
-      name: 'Vladimir',
-      score: 92,
-      class: 'foxes'
-    },
-    {
-      name: 'Albert',
-      score: 71,
-      class: 'wolves'
-    },
-    {
-      name: 'Viktor',
-      score: 80,
-      class: 'tigers'
-    }
-  ]));
+  // console.log(highestScore([
+  //   {
+  //     name: 'Alexander',
+  //     score: 100,
+  //     class: 'foxes'
+  //   },
+  //   {
+  //     name: 'Alisa',
+  //     score: 76,
+  //     class: 'wolves'
+  //   },
+  //   {
+  //     name: 'Vladimir',
+  //     score: 92,
+  //     class: 'foxes'
+  //   },
+  //   {
+  //     name: 'Albert',
+  //     score: 71,
+  //     class: 'wolves'
+  //   },
+  //   {
+  //     name: 'Viktor',
+  //     score: 80,
+  //     class: 'tigers'
+  //   }
+  // ]));
   
-  // {
-  //   foxes: { name: 'Alexander', score: 100 },
-  //   wolves: { name: 'Alisa', score: 76 },
-  //   tigers: { name: 'Viktor', score: 80 }
-  // }
+  // // {
+  // //   foxes: { name: 'Alexander', score: 100 },
+  // //   wolves: { name: 'Alisa', score: 76 },
+  // //   tigers: { name: 'Viktor', score: 80 }
+  // // }
   
   
-  console.log(highestScore([])); //{}
+  // console.log(highestScore([])); //{}
   
