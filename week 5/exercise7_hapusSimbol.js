@@ -1,6 +1,6 @@
 function hapusSimbol(str) {
     // you can only write your code here!
-    var hasil = str.match(/[a-z,0-9]/g).join('')
+    var hasil = str.match(/[a-z0-9]/g).join('')
     return hasil
   }
   

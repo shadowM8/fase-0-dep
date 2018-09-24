@@ -1,7 +1,7 @@
 function cariPelaku(str) {
     // you can only write your code here!
     var hasil = str.match(/abc/gi)  // `g` menandakan pencarian secara global, tidak hanya satu kali
-    return hasil                    // `i` menandakan pencarian karakter dengan ignore case/mengabaikan besar kecilnya karakter
+    return hasil.length               // `i` menandakan pencarian karakter dengan ignore case/mengabaikan besar kecilnya karakter
   }
   
   // TEST CASES
